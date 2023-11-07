@@ -1,4 +1,4 @@
-# ddz_front# DDZ - Decentralized Driverz
+# ddz_front - Decentralized Driverz
 
 DDZ is an innovative decentralized platform that enables the delivery of goods and people. Developed with Flutter, this cross-platform app allows users to access services without registration, while drivers need to verify their identity to register.
 
