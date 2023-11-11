@@ -2,10 +2,11 @@
 
 // main_page.dart
 import 'package:ddz/views/home_page.dart';
+import 'package:ddz/views/profile_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'post_page.dart';
-import 'profile_page.dart';
+
 
 // 現在選択されているタブのインデックスを管理するProvider
 final tabProvider = StateProvider((ref) => 0);
@@ -24,10 +25,10 @@ class MainPage extends ConsumerWidget {
     return Scaffold(
       body: IndexedStack(
         index: tabIndex,
-        children: [
-          const HomePage(),
-          (),
-          ProfileTab(),
+        children: const [
+          HomePage(),
+          PostPage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(
