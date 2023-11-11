@@ -2,6 +2,8 @@
 
 DDZ is an innovative decentralized platform that enables the delivery of goods and people. Developed with Flutter, this cross-platform app allows users to access services without registration, while drivers need to verify their identity to register.
 
+Driverz App
+
 ## How to Contribute
 
 We welcome contributions to the DDZ project! Whether you love writing code, improving documentation, or reporting bugs, your contributions are valuable!
