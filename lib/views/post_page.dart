@@ -1,7 +1,7 @@
 
 
 // post_page.dart
-import 'package:ddz/widgets/go_button_widget.dart';
+import 'package:ddz/widgets/postswidgets/go_button_widget.dart';
 import 'package:flutter/material.dart';
 
 class PostPage extends StatelessWidget {

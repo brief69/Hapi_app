@@ -1,6 +1,6 @@
 
 
-import 'package:ddz/widgets/history_item_widget.dart';
+import 'package:ddz/widgets/profilewidgets/history_item_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
