@@ -64,7 +64,6 @@ class HomePage extends ConsumerWidget {
               ),
             ],
           ),
-          // Twitterのようなタブを構築するSliverPersistentHeaderを配置
           SliverPersistentHeader(
             delegate: _SliverAppBarDelegate(
               const TabBar(
