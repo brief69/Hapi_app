@@ -11,31 +11,42 @@ void main() {
       child: MyApp(),
     ),
   );
-}
+} // アプリのエントリポイント。MyApp クラスのインスタンスを作成し、RiverpodのProviderScopeでラップしてアプリを起動
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({super.key}); // MyApp クラスのコンストラクタ。キーをオプションとして受け取る
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Driverz App',
-      theme: ThemeData(
-        // テーマのプライマリカラーを設定
-        primarySwatch: const Color.fromARGB(255, 1, 0, 56),
-        // Scaffoldなどの背景色を設定
-        scaffoldBackgroundColor: const Color.fromARGB(255, 1, 0, 56),
-        // アプリ全体のテキストテーマを設定
-        textTheme: const TextTheme(
-          // すべてのテキストに共通のスタイルを適用
-          bodyLarge: TextStyle(color: Colors.white),
-          bodyMedium: TextStyle(color: Colors.white),
-          // その他のテキストスタイルもここで設定できます
-        ),
-        // アプリ全体のデフォルトフォントを指定
-        fontFamily: 'Roboto',
+Widget build(BuildContext context) {
+  // カスタムのカラースウォッチを定義
+  Map<int, Color> customSwatch = {
+    50: const Color.fromRGBO(1, 0, 56, .1),
+    100: const Color.fromRGBO(1, 0, 56, .2),
+    200: const Color.fromRGBO(1, 0, 56, .3),
+    300: const Color.fromRGBO(1, 0, 56, .4),
+    400: const Color.fromRGBO(1, 0, 56, .5),
+    500: const Color.fromRGBO(1, 0, 56, .6),
+    600: const Color.fromRGBO(1, 0, 56, .7),
+    700: const Color.fromRGBO(1, 0, 56, .8),
+    800: const Color.fromRGBO(1, 0, 56, .9),
+    900: const Color.fromRGBO(1, 0, 56, 1),
+  };
+
+  // カスタムのMaterialColorを定義
+  MaterialColor customMaterialColor = MaterialColor(0xFF010038, customSwatch);
+
+  return MaterialApp(
+    title: 'Driverz App', // アプリのタイトルを設定
+    theme: ThemeData(
+      primarySwatch: customMaterialColor, // カスタムカラーをプライマリスウォッチとして設定
+      scaffoldBackgroundColor: const Color.fromARGB(255, 1, 0, 56), // 背景色を設定
+      textTheme: const TextTheme(
+        bodyLarge: TextStyle(color: Colors.white), // テキストスタイルを設定
+        bodyMedium: TextStyle(color: Colors.white),
       ),
-      home: const MainPage(),
-    );
-  }
+      fontFamily: 'Roboto', // デフォルトフォントを設定
+    ),
+    home: const MainPage(), // ホーム画面を設定
+  );
+}
 }
