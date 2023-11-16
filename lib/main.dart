@@ -4,8 +4,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'views/main_page.dart'; 
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized(); // Flutterバインディングの初期化
+  await Firebase.initializeApp(); // Firebaseの初期化
   runApp(
     const ProviderScope(
       child: MyApp(),
