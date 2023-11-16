@@ -42,6 +42,7 @@ class PostActionsPopupMenu extends StatelessWidget {
 
         // 5秒後にメニューを自動的に閉じる
         await Future.delayed(const Duration(seconds: 5));
+        // ignore: use_build_context_synchronously
         Navigator.of(context).pop();
       },
     );
