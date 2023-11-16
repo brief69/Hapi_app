@@ -33,6 +33,7 @@ class MainPage extends ConsumerWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: tabIndex,
+        // ignore: deprecated_member_use
         onTap: (index) => ref.read(tabProvider.state).state = index,
         items: const [
           BottomNavigationBarItem(
