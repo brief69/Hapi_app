@@ -19,4 +19,19 @@ class PostItem {
     required this.price,
     required this.dateTime,
   });
+
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'userIconUrl': userIconUrl,
+      'username': username,
+      'fromAddress': fromAddress,
+      'toAddress': toAddress,
+      'price': price,
+      'dateTime': dateTime,
+    };
+  }
+
+  // JSONからPostItemオブジェクトを作成するファクトリコンストラクタもここに追加することができます。
 }
+

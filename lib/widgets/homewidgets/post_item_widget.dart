@@ -1,15 +1,20 @@
 
-
+// post_item_widget.dart
 import 'package:ddz/models/post.dart';
+import 'package:ddz/viewmodels/post_viewmodel.dart';
+import 'package:ddz/widgets/post_actions_popup_menu.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class PostItemWidget extends StatelessWidget {
+class PostItemWidget extends ConsumerWidget {
   final PostItem postItem;
 
   const PostItemWidget({super.key, required this.postItem});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final viewModel = ref.watch(postViewModelProvider.notifier);
+    
     return InkWell(
       onTap: () {
         // タップ時の画面遷移のロジックをここに追加します。
@@ -51,10 +56,15 @@ class PostItemWidget extends StatelessWidget {
                   icon: const Icon(Icons.more_horiz),
                   color: Colors.white,
                   onPressed: () {
-                    // More icon の処理をここに追加します。
-                    // cuptino widgetのアレを挿す
-                  },
-                ),
+                    showDialog(
+                      context: context,
+                      builder: (_) => PostActionsPopupMenu(
+                        onEdit: () => viewModel.editPost(postItem),
+                        onDelete: () => viewModel.deletePost(postItem),
+                      ),
+                    );
+                  }
+                )
               ],
             ),
             Row(
