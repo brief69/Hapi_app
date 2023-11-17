@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
 
   @override
 Widget build(BuildContext context) {
+  
   // カスタムのカラースウォッチを定義
   Map<int, Color> customSwatch = {
     50: const Color.fromRGBO(1, 0, 56, .1),
