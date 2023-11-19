@@ -21,6 +21,6 @@ We welcome contributions to the DDZ project! Whether you love writing code, impr
 ## Installation
 
 git clone <https://github.com/brief69/ddz.git>
-cd ddz
-flutter pub get
-flutter run
+- cd ddz
+- flutter pub get
+- flutter run
